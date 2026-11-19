@@ -1,0 +1,109 @@
+:root {
+  --fundo: #f3f4f6;
+  --painel: #ffffff;
+  --texto: #1f2933;
+  --suave: #555555;
+  --borda: #c9ced6;
+  --destaque: #2b5fa8;
+  --aceita: #1a7f37;
+  --rejeita: #c62828;
+  --fonte-ui: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --fonte-codigo: Consolas, "DejaVu Sans Mono", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte-ui);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.principal {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.explicacao { margin: 4px 0 14px; }
+
+fieldset {
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+}
+
+legend { padding: 0 6px; font-size: .9rem; color: var(--suave); }
+
+.linha-entrada { display: flex; gap: 8px; }
+
+#entrada {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  font-family: var(--fonte-codigo);
+  font-size: 1.15rem;
+  border: 1px solid var(--borda);
+  border-radius: 3px;
+}
+#entrada:focus { outline: 2px solid var(--destaque); outline-offset: 1px; }
+
+button {
+  padding: 6px 14px;
+  font: inherit;
+  color: var(--texto);
+  background: #e7eaee;
+  border: 1px solid var(--borda);
+  border-radius: 3px;
+  cursor: pointer;
+}
+button:hover { background: #dbe0e6; }
+button:focus-visible { outline: 2px solid var(--destaque); outline-offset: 1px; }
+
+.dica { margin: 6px 0 12px; color: var(--suave); font-size: .9rem; }
+
+.estado { margin: 0; font-size: 1.05rem; font-weight: 700; }
+.rastro { margin: 6px 0 0; font-family: var(--fonte-codigo); font-size: .95rem; overflow-wrap: anywhere; }
+.detalhe { margin: 6px 0 0; color: var(--suave); }
+
+.resultado { margin: 0; font-size: 1.1rem; font-weight: 700; }
+.resultado.aceita { color: var(--aceita); }
+.resultado.rejeita { color: var(--rejeita); }
+.motivo { margin: 5px 0 0; min-height: 1.2em; }
+
+.rolagem-x { overflow-x: auto; }
+
+table { width: 100%; border-collapse: collapse; text-align: center; }
+th, td { padding: 5px 8px; border: 1px solid var(--borda); }
+th { background: #eceff3; font-weight: 600; }
+td:last-child { text-align: left; }
+
+.historico {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 7.5em;
+  overflow-y: auto;
+  border: 1px solid var(--borda);
+  font-family: var(--fonte-codigo);
+  font-size: .85rem;
+}
+.historico li { padding: 2px 8px; }
+.historico li:nth-child(even) { background: #f6f7f9; }
+
+.botoes { display: flex; gap: 8px; margin-top: 10px; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 1.5rem; }
+  .linha-entrada { flex-direction: column; }
+}

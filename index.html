@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analisador Léxico - Linguagens Formais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="principal">
+
+    <h1>ANALISADOR LÉXICO</h1>
+    <p class="explicacao" id="explicacao">
+      Linguagem regular: se a sentença começa com 'a', o número de 'b' deve ser par.
+    </p>
+
+    <!-- Entrada da sentença-->
+    <fieldset>
+      <legend>Digite uma sentença</legend>
+      <div class="linha-entrada">
+        <input type="text" id="entrada" autocomplete="off" spellcheck="false" autofocus>
+        <button type="button" id="btnAnalisar">Analisar</button>
+      </div>
+    </fieldset>
+
+    <p class="dica">
+      Pressione ESPAÇO ou ENTER para finalizar cada sentença.
+      Pontuação e símbolos especiais são ignorados.
+    </p>
+
+    <!-- acompanhamento do autômato -->
+    <fieldset>
+      <legend>Acompanhamento do autômato</legend>
+      <p id="estadoLabel" class="estado">Estado atual: q0 (inicial)</p>
+      <p id="rastroLabel" class="rastro">Caminho: q0</p>
+      <p id="detalheLabel" class="detalhe">Aguardando caracteres...</p>
+    </fieldset>
+
+    <!-- Rrsultado -->
+    <fieldset>
+      <legend>Resultado da análise</legend>
+      <p id="resultadoLabel" class="resultado">Nenhuma sentença analisada.</p>
+      <p id="motivoLabel" class="motivo"></p>
+    </fieldset>
+
+    <!--tabela de transições -->
+    <fieldset>
+      <legend>Tabela de transições</legend>
+      <div class="rolagem-x">
+        <table id="tabelaTransicoes">
+          <thead>
+            <tr>
+              <th>Estado atual</th>
+              <th>Entrada a</th>
+              <th>Entrada b</th>
+              <th>Entrada c</th>
+              <th>Condição</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </fieldset>
+
+    <!-- histórico -->
+    <fieldset>
+      <legend>Histórico de sentenças</legend>
+      <ul id="listaHistorico" class="historico"></ul>
+    </fieldset>
+
+    <div class="botoes">
+      <button type="button" id="btnLimparCampo">Limpar campo</button>
+      <button type="button" id="btnLimparHistorico">Limpar histórico</button>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
